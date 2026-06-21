@@ -24,10 +24,14 @@ def main():
         # 3. Transpose the image manually or using NumPy
         # First, squeeze it to a 2D array (400, 400) to safely perform a standard matrix transpose
         squeezed_array = np.squeeze(square_array)
+        height, width = squeezed_array.shape
 
-        # Perform the transpose (swapping rows and columns)
-        transposed_array = np.transpose(squeezed_array)
+        transposed_list = [[0 for _ in range(height)] for _ in range(width)]
+        for y in range(height):
+            for x in range(width):
+                transposed_list[x][y] = squeezed_array[y][x]
 
+        transposed_array = np.array(transposed_list)
         print(f"New shape after Transpose: {transposed_array.shape}")
         print(transposed_array)
 
