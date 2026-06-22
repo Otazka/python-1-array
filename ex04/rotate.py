@@ -21,8 +21,6 @@ def main():
         square_array = img_array[start_y:end_y, start_x:end_x, 0:1]
         print(square_array)
 
-        # 3. Transpose the image manually or using NumPy
-        # First, squeeze it to a 2D array (400, 400) to safely perform a standard matrix transpose
         squeezed_array = np.squeeze(square_array)
         height, width = squeezed_array.shape
 
@@ -35,7 +33,6 @@ def main():
         print(f"New shape after Transpose: {transposed_array.shape}")
         print(transposed_array)
 
-        # 4. Display the transposed image
         plt.imshow(transposed_array, cmap="gray")
         plt.title("Transposed Image")
         plt.show()
