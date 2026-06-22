@@ -1,10 +1,9 @@
-import numpy as np
 import matplotlib.pyplot as plt
 
-def ft_invert(array)-> array:
+
+def ft_invert(array):
     """Inverts the color of the image received."""
     try:
-        #8-bit color is: 255 - pixel_value
         inverted = 255 - array.copy()
 
         plt.imshow(inverted)
@@ -15,12 +14,13 @@ def ft_invert(array)-> array:
         print(f"Error in ft_invert: {e}")
         return None
 
-def ft_red(array)-> array:
+
+def ft_red(array):
     """Applies a red filter to the image."""
     try:
         red_img = array.copy()
-        red_img[:, :, 1] = red_img[:, :, 1] * 0 #green
-        red_img[:, :, 2] = red_img[:, :, 2] * 0 #blue
+        red_img[:, :, 1] = red_img[:, :, 1] * 0
+        red_img[:, :, 2] = red_img[:, :, 2] * 0
 
         plt.imshow(red_img)
         plt.title("Red Channel")
@@ -30,12 +30,13 @@ def ft_red(array)-> array:
         print(f"Error in ft_red: {e}")
         return None
 
-def ft_green(array)-> array:
+
+def ft_green(array):
     """Applies a green filter to the image."""
     try:
         green_img = array.copy()
-        green_img[:, :, 0] = green_img[:, :, 0] - green_img[:, :, 0]  #red
-        green_img[:, :, 2] = green_img[:, :, 2] - green_img[:, :, 2]  #blue
+        green_img[:, :, 0] = green_img[:, :, 0] - green_img[:, :, 0]
+        green_img[:, :, 2] = green_img[:, :, 2] - green_img[:, :, 2]
 
         plt.imshow(green_img)
         plt.title("Green Channel")
@@ -45,12 +46,13 @@ def ft_green(array)-> array:
         print(f"Error in ft_green: {e}")
         return None
 
-def ft_blue(array)-> array:
+
+def ft_blue(array):
     """Applies a blue filter to the image."""
     try:
         blue_img = array.copy()
-        blue_img[:, :, 0] = 0 #red
-        blue_img[:, :, 1] = 0 #green
+        blue_img[:, :, 0] = 0
+        blue_img[:, :, 1] = 0
 
         plt.imshow(blue_img)
         plt.title("Blue Channel")
@@ -60,12 +62,13 @@ def ft_blue(array)-> array:
         print(f"Error in ft_blue: {e}")
         return None
 
-def ft_grey(array)-> array:
+
+def ft_grey(array):
     """Applies a grey filter to the image."""
     try:
         grey_img = array.copy()
 
-        grey_channel = grey_img[:, :, 1]  #green channel as the base luminance
+        grey_channel = grey_img[:, :, 1]
         grey_img[:, :, 0] = grey_channel
         grey_img[:, :, 1] = grey_channel
         grey_img[:, :, 2] = grey_channel
