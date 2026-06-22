@@ -2,6 +2,7 @@ import os
 import numpy as np
 from PIL import Image
 
+
 def ft_load(path: str) -> np.ndarray:
     """
     A function that loads an image,
@@ -14,7 +15,7 @@ def ft_load(path: str) -> np.ndarray:
             raise FileNotFoundError(f"The file '{path}' does not exist.")
 
         if not path.lower().endswith(('.jpg', '.jpeg')):
-            raise ValueError("Unsupported file format. Please provide a JPG or JPEG image.")
+            raise ValueError("Unsupported file format: .jpg or .jpeg only")
 
         with Image.open(path) as img:
             img_rgb = img.convert("RGB")
