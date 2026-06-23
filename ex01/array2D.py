@@ -7,7 +7,7 @@ def slice_me(family: list, start: int, end: int) -> list:
         version of the array based on the provided
         start and end arguments"""
     if (not isinstance(family, list) or not isinstance(start, int)
-            or not isinstance(start, int)):
+            or not isinstance(end, int)):
         raise TypeError("Arguments should be of type list or int")
 
     if len(family) == 0:
